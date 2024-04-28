@@ -1,0 +1,6 @@
+@ChallengeRSM.Controllers_HostAddress = http://localhost:5014
+
+GET {{ChallengeRSM.Controllers_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
