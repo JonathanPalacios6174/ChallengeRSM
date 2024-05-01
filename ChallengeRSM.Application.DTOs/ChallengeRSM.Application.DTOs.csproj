@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ChallengeRSM.Infrastructure\ChallengeRSM.Infrastructure.csproj" />
-  </ItemGroup>
-
 </Project>
