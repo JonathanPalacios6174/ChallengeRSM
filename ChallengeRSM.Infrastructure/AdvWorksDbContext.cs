@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using ChallengeRSM.Infrastructure.Models;
+using ChallengeRSM.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChallengeRSM.Infrastructure

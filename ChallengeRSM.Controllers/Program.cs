@@ -1,8 +1,7 @@
-using ChallengeRSM.Application.DTOs;
-using ChallengeRSM.Application.Interface;
 using ChallengeRSM.Application.Services;
+using ChallengeRSM.Domain.Interface.Repositories;
+using ChallengeRSM.Domain.Interface.Services;
 using ChallengeRSM.Infrastructure;
-using ChallengeRSM.Infrastructure.Interface;
 using ChallengeRSM.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 

@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ChallengeRSM.Domain\ChallengeRSM.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

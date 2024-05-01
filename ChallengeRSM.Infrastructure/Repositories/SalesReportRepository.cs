@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChallengeRSM.Infrastructure.Interface;
-using ChallengeRSM.Infrastructure.Models;
+using ChallengeRSM.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using ChallengeRSM.Domain.Interface.Repositories;
 
 namespace ChallengeRSM.Infrastructure.Repositories
 {

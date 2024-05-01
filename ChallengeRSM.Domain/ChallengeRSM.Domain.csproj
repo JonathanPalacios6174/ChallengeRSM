@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ChallengeRSM.Application.DTOs\ChallengeRSM.Application.DTOs.csproj" />
+  </ItemGroup>
+
 </Project>

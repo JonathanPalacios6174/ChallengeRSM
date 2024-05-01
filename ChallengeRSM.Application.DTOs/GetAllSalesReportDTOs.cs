@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChallengeRSM.Infrastructure.Models
+namespace ChallengeRSM.Application.DTOs
 {
-    public class vSalesReport
+    public class GetAllSalesReportDTOs
     {
-        public int OrderID { get; set; }
+        public int OrderId { get; set; }
 
         public DateTime OrderDate { get; set; }
 
-        public int CustomerID { get; set; }
+        public int CustomerId { get; set; }
 
-        public int ProductID { get; set; }
+        public int ProductId { get; set; }
 
         public string ProductName { get; set; }
 
@@ -26,7 +26,7 @@ namespace ChallengeRSM.Infrastructure.Models
 
         public decimal? TotalPrice { get; set; }
 
-        public int? SalesPersonID { get; set; }
+        public int? SalesPersonId { get; set; }
 
         public string SalesPersonName { get; set; }
 

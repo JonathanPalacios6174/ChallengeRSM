@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ChallengeRSM.Application\ChallengeRSM.Application.csproj" />
+    <ProjectReference Include="..\ChallengeRSM.Domain\ChallengeRSM.Domain.csproj" />
     <ProjectReference Include="..\ChallengeRSM.Infrastructure\ChallengeRSM.Infrastructure.csproj" />
   </ItemGroup>
 

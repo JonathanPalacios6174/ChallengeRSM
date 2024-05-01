@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ChallengeRSM.Application.DTOs;
-using ChallengeRSM.Application.Interface;
+using ChallengeRSM.Domain.Interface.Repositories;
+using ChallengeRSM.Domain.Interface.Services;
 using ChallengeRSM.Infrastructure;
-using ChallengeRSM.Infrastructure.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChallengeRSM.Application.Services
@@ -19,11 +19,11 @@ namespace ChallengeRSM.Application.Services
         {
             _salesReportRepository = salesReportRepository;
         }
-        public async Task<IEnumerable<SalesReport>> GetSalesReports()
+        public async Task<IEnumerable<GetAllSalesReportDTOs>> GetSalesReports()
         {
             var saleReports = await _salesReportRepository.GetSalesReports();
 
-            List<SalesReport> list = [];
+            List<GetAllSalesReportDTOs> list = [];
 
             int numberReport = 0;
 
@@ -31,7 +31,7 @@ namespace ChallengeRSM.Application.Services
             {
                 if (numberReport <= 20)
                 {
-                    SalesReport dto = new() 
+                    GetAllSalesReportDTOs dto = new() 
                     {
                         OrderId = s.OrderID,
                         ProductName = s.ProductName
@@ -49,6 +49,5 @@ namespace ChallengeRSM.Application.Services
 
             return list;
         }
-
     }
 }

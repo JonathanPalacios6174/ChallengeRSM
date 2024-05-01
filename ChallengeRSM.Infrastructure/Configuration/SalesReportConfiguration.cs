@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChallengeRSM.Infrastructure.Models;
+using ChallengeRSM.Domain.Entities;   
 using ChallengeRSM.Infrastructure.Test;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
