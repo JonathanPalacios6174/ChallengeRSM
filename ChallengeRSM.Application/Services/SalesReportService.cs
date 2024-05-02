@@ -25,26 +25,27 @@ namespace ChallengeRSM.Application.Services
 
             List<GetAllSalesReportDTOs> list = [];
 
-            int numberReport = 0;
-
             foreach(var s in saleReports)
             {
-                if (numberReport <= 20)
-                {
                     GetAllSalesReportDTOs dto = new() 
                     {
                         OrderId = s.OrderID,
-                        ProductName = s.ProductName
+                        OrderDate = s.OrderDate,
+                        CustomerId = s.CustomerID,
+                        ProductId = s.ProductID,
+                        ProductName = s.ProductName,
+                        ProductCategory = s.ProductCategory,
+                        UnitPrice = s.UnitPrice,
+                        Quantity = s.Quantity,
+                        TotalPrice = s.TotalPrice,
+                        SalesPersonId = s.SalesPersonID,
+                        SalesPersonName = s.SalesPersonName,
+                        ShippingAddress = s.ShippingAddress,
+                        BillingAddress = s.BillingAddress
+
                     };
 
                     list.Add(dto);
-
-                    numberReport++;
-                }
-                else
-                {
-                    break;
-                }
             }
 
             return list;

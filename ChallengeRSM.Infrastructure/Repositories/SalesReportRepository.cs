@@ -22,7 +22,9 @@ namespace ChallengeRSM.Infrastructure.Repositories
         public async Task<IEnumerable<vSalesReport>> GetSalesReports()
         {
             return await _dbContext.Set<vSalesReport>()
-                .AsNoTracking() .ToListAsync();
+                .AsNoTracking()
+                .Take(10)
+                .ToListAsync();
         }
     }
     
