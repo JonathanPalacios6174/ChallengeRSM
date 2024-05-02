@@ -26,6 +26,23 @@ namespace ChallengeRSM.Infrastructure.Repositories
                 .Take(10)
                 .ToListAsync();
         }
+
+        public async Task<IEnumerable<vSalesReport>> GetSalesReport()
+        {
+            var topProducts = await _dbContext.Set<vSalesReport>()
+                            .GroupBy(s => new { s.ProductID, s.ProductName })
+                            .Select(g => new vSalesReport
+                            {
+                                ProductID = g.Key.ProductID,
+                                ProductName = g.Key.ProductName,
+                                Quantity = ((short)g.Sum(s => s.Quantity))  // Aquí usamos Quantity en lugar de TotalQuantitySold
+                            })
+                            .OrderByDescending(g => g.Quantity)  // Ordenamos por Quantity
+                            .Take(10)
+                            .ToListAsync();
+
+            return null;
+        }
     }
     
 }
