@@ -12,5 +12,7 @@ namespace ChallengeRSM.Domain.Interface.Services
     public interface ISalesReportService
     {
         Task<IEnumerable<GetAllSalesReportDTOs>> GetSalesReports();
+        Task<IEnumerable<TopSalesByProductCategoryDTOs>> GetProductByCategory();
     }
+        
 }

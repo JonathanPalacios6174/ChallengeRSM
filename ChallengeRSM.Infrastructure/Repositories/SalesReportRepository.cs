@@ -21,10 +21,28 @@ namespace ChallengeRSM.Infrastructure.Repositories
 
         public async Task<IEnumerable<vSalesReport>> GetSalesReports()
         {
+           
             return await _dbContext.Set<vSalesReport>()
                 .AsNoTracking()
                 .Take(10)
                 .ToListAsync();
+        }
+
+        public async Task<List<vSalesReport>> GetTopProductByCategory()
+        {
+            var topSalesByCategory = await  _dbContext.Set<vSalesReport>()
+                .GroupBy(s => s.ProductCategory)
+                .Select(g => new vSalesReport
+                {
+                    ProductCategory = g.Key,
+                    TotalPrice = g.Sum(s => s.TotalPrice)
+                })
+                .OrderByDescending(g => g.TotalPrice)
+                .Take(7)
+                .ToListAsync();
+
+            return topSalesByCategory;
+            
         }
 
         public async Task<IEnumerable<vSalesReport>> GetSalesReport()

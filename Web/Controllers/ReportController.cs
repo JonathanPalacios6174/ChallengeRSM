@@ -35,7 +35,24 @@ namespace Web.Controllers
             return View(sellsReportList);
 
         }
-       
+
+        public async Task<IActionResult> ReportTop()
+        {
+            HttpClient rsm = new HttpClient();
+
+            var url = "https://localhost:7220/api/Report/GetTopProductByCategory";
+
+            var httpRespond = await rsm.GetAsync(url);
+
+            var read = await httpRespond.Content.ReadAsStringAsync();
+
+            var sellsReportList = JsonConvert.DeserializeObject<List<SalesByProductCategoryModel>>(read);
+
+            return View(sellsReportList);
+
+        }
+
+
 
     }
 }

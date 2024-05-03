@@ -17,14 +17,17 @@ namespace ChallengeRSM.Controllers.Controllers
         }
         // GET: api/<ValuesController>
         [HttpGet("GetAll")]
-
-
         public async Task<IActionResult> GetAll()
         {
 
             return Ok(await _salesReportService.GetSalesReports());
         }
 
-        
+        [HttpGet("GetTopProductByCategory")]
+        public async Task<IActionResult> GetTopProductByCategory()
+        {
+
+            return Ok(await _salesReportService.GetProductByCategory());
+        }
     }
 }

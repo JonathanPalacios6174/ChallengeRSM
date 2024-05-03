@@ -10,6 +10,7 @@ namespace ChallengeRSM.Domain.Interface.Repositories
     public interface ISalesReportRepository
     {
         Task<IEnumerable<vSalesReport>> GetSalesReports();
-       
+        Task<IEnumerable<vSalesReport>> GetSalesReport();
+        Task<List<vSalesReport>> GetTopProductByCategory();
     }
 }

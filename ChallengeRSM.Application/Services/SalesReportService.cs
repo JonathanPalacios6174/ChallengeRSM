@@ -50,5 +50,27 @@ namespace ChallengeRSM.Application.Services
 
             return list;
         }
+
+        public async Task<IEnumerable<TopSalesByProductCategoryDTOs>> GetProductByCategory()
+        {
+            var saleReports = await _salesReportRepository.GetTopProductByCategory();
+
+            List<TopSalesByProductCategoryDTOs> list = [];
+
+
+            foreach (var s in saleReports)
+            {
+                TopSalesByProductCategoryDTOs dto = new()
+                {
+                    ProductCategory = s.ProductCategory,
+                    TotalPrice = s.TotalPrice
+
+                };
+
+                list.Add(dto);
+            }
+
+            return list;
+        }
     }
 }
