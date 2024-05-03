@@ -7,19 +7,19 @@ namespace ChallengeRSM.Controllers.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class ReportController : ControllerBase
     {
         private readonly ISalesReportService _salesReportService;
 
-        public ValuesController(ISalesReportService reportService)
+        public ReportController(ISalesReportService reportService)
         {
             _salesReportService = reportService;
         }
         // GET: api/<ValuesController>
-        [HttpGet]
+        [HttpGet("GetAll")]
 
 
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAll()
         {
 
             return Ok(await _salesReportService.GetSalesReports());

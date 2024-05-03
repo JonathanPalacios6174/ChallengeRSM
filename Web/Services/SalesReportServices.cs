@@ -5,9 +5,9 @@
 
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public SalesReportServices(IHttpClientFactory httpClientFactory)
+        public SalesReportServices()
         {
-            _httpClientFactory = httpClientFactory;
+          //  _httpClientFactory = httpClientFactory;
         }
 
         public async Task<string> GetSalesReport()
@@ -34,5 +34,20 @@
                 throw new Exception($"Error interno del servidor: {ex.Message}");
             }
         }
+
+        public async Task<string> GetSalesReport2()
+        {
+            HttpClient rsmApi = new HttpClient();
+
+            var url = "http://localhost:44306/api/SalesReport";
+
+            var httpsResponse = await rsmApi.GetAsync(url);
+
+            var content = await httpsResponse.Content.ReadAsStringAsync();
+
+            return null;
+        }
+
+
     }
 }
