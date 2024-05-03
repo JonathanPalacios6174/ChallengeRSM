@@ -78,7 +78,20 @@
         new DataTable('#example', {
             layout: {
                 topStart: {
-                    buttons: ['csv', 'pdf',]
+                    buttons:[
+                        {
+                           extend: 'csv',
+                           title: 'Sales Report'
+                           
+                        }, 
+                        {
+                           extend: 'pdfHtml5',
+                           orientation: 'landscape',
+                           pageSize: 'LEGAL',
+                           title: 'Sales Report',
+                           
+                        }]
+                    
                 }
             }
         });
