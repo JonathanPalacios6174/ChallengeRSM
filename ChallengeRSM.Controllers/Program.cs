@@ -23,6 +23,8 @@ builder.Services.AddDbContext<AdvWorksDbContext>(options =>
 builder.Services.AddTransient<ISalesReportRepository, SalesReportRepository >();
 builder.Services.AddTransient<ISalesReportService, SalesReportService>();
 
+builder.Services.AddTransient<ITopProductRepository, TopProductRepository>();
+builder.Services.AddTransient<ITopProductService, TopProductService>();
 
 
 var app = builder.Build();
